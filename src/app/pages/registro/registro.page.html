@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <ion-item>
+    <ion-input type="email" name="correoUsuario" [(ngModel)]="correoUsuario" placeholder="Correo Electrónico" required></ion-input>
+    <ion-text color="danger" *ngIf="submitted && !correoUsuario">ingresa tu correo electrónico</ion-text>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" name="password" [(ngModel)]="password" placeholder="Contraseña" required></ion-input>
+    <ion-text color="danger" *ngIf="submitted && !password">ingresa tu contraseña</ion-text>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="password" name="repeatPassword" [(ngModel)]="repeatPassword" placeholder="Contraseña" required></ion-input>
+    <ion-text color="danger" *ngIf="submitted && !repeatPassword">repite tu contraseña</ion-text>
+  </ion-item>
+
+  <ion-button color="danger" size="small" shape="round" (click)="handleRegister()">Registrar</ion-button>
+
+</ion-content>

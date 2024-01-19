@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Scan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-text>
+    <p>
+      Esta página te permite escanear códigos de barras. 
+      Pulsa el botón a continuación para iniciar el escaneo.
+    </p>
+  </ion-text>
+
+  <ion-button expand="full"
+              fill="outline"
+              size="large"
+              shape="round"
+              (click)="scan()"
+  >
+    ESCANEAR CÓDIGO
+  </ion-button>
+</ion-content>

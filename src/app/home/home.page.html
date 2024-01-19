@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Bienvenido
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle></ion-card-subtitle>
+      <ion-card-title color="primary" class="ion-text-center"> BIENVENIDO A RETAIL OFF 
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <img class="imgRetail" src="../assets/img/retailoff.png">
+
+      <ion-button color="tertiary" expand="full" routerLink="/login">Iniciar Sesión</ion-button>
+      <h2 class="Sans Serif"> ¿Estás Registrado?</h2>
+      <ion-button color="tertiary" expand="full" routerLink="/registro">Regístrate con nosotros</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <h2 class="titulo-proyectos">Algunos de Nuestros Proyectos en los Últimos 20 Años</h2>
+  <div class="projects-section">
+    <ion-card *ngFor="let project of project">
+      <img [src]="project.image" alt="Imagen del proyecto">
+      <ion-card-content>
+        <h2 class="titulo-proyecto-card">{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

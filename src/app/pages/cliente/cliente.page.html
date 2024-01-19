@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Regresar" defaultHref="/logeado"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registra un Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrar Cliente</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Nombre del Cliente</ion-label>
+        <ion-input [(ngModel)]="nombreCliente" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="registrarCliente()">Registrar Cliente</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let cliente of clientes">
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">Cliente Registrado</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content class="ion-text-center">
+      <p>Nombre: {{ cliente.nombreCliente }}</p>
+      <p>Email: {{ cliente.email }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
